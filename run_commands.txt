@@ -1,0 +1,38 @@
+# 500 yr calibration run ending at 2000-1-1
+pf_splash config/p_final_tnf.ini -182501 0
+
+# HD Runs 
+# ----------------------------------------
+
+# ~20000 yr spinup ending in 1900
+pf_splash config/p_final_gyf.ini -7300101 -36525
+
+# 100 yr spinup continuation for submission (1900-2000)
+pf_splash config/p_final_gyf.ini -7300101 0
+
+# 500 year forward run (2000-2500)
+pf_splash config/p_final_gyf.ini -7300101 182986
+
+# 10000 year forward run (2000-12000)
+pf_splash config/p_final_gyf.ini -365242 3652425
+
+
+# LD Runs 
+# traits are taken from the endpoint of the HD 100 yr (2000 CE)
+# continuation run above
+# ----------------------------------------
+
+# ~1000 yr spinup ending in 1900
+pf_splash config/p_final_gyf.ini -365242 -36525
+
+# 100 yr spinup continuation for submission (1900-2000)
+pf_splash config/p_final_gyf.ini -365242 0
+
+# 500 year forward run (2000-2500)
+pf_splash config/p_final_gyf.ini -365242 182986
+
+
+# continuation tests
+
+pf_splash config/p_final_gyf.ini -7300101 -6934855
+pf_splash config/p_final_gyf_cont.ini -7300101 -6752355
