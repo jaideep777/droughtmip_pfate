@@ -19,7 +19,7 @@ sand = 37.27
 clay = 60.09
 silt = 2.64
 om = 2.54
-bulk_density = 1.125 # 1.04 # gm cc-1 # FIXME: Actually should be 1.125, 1.04 used in DroughtMIP submission
+bulk_density = 1.125 # gm cc-1
 depth = 16.1
 lat = 2.85
 elev = 0
@@ -30,9 +30,9 @@ soil_props_tnf$site = "tnf"
 
 library(tidyverse)
 
-soil_info_array = 
-  rbind(soil_props_gyf |> as.data.frame(), 
-        soil_props_tnf |> as.data.frame()) %>% 
+soil_info_array =
+  rbind(soil_props_gyf |> as.data.frame(),
+        soil_props_tnf |> as.data.frame()) %>%
   mutate(
     SAT = SAT*depth*1000,
     WP = WP*depth*1000,
@@ -47,10 +47,10 @@ soil_info_array =
     cellin = 3,
     cellout = 3,
     AI = 0
-  ) %>% 
+  ) %>%
   select(
     SAT, WP, FC, Ksat, lambda, depth, bub_press, RES, Au, Ai, cellin, cellout, AI
   )
-    
+
 soil_info_array
 
